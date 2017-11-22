@@ -30,17 +30,22 @@ export default class Portal extends Component {
       >
         <Segment
           style={{
-            width: "25%",
-            height: "15%",
+            width: "40%",
             position: "absolute",
             left: "50%",
             top: "50%",
             zIndex: 1000,
-            margin: "-70px 0 0 -170px"
+            margin: "-70px 0 0 -170px",
+            display: "flex!important",
+            flexDirection: "column"
           }}
+          color={this.props.color}
+          stacked
+          raised
+          loading={this.props.loading}
         >
-          <Header>This is an example portal</Header>
-          <p>An image has been uploaded</p>
+          <Header>{this.props.header}</Header>
+          <p>{this.props.message}</p>
           <p>To close, simply click away</p>
         </Segment>
       </TransitionablePortal>

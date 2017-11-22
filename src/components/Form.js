@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import agent from "superagent";
 import styled from "styled-components";
 import { Icon } from "semantic-ui-react";
 import Dropzone from "react-dropzone";
@@ -30,8 +31,6 @@ export default class FormUpload extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      accepted: [],
-      rejected: [],
       openPortal: false
     };
   }
@@ -49,15 +48,35 @@ export default class FormUpload extends Component {
   }
 
   onDrop(acceptedFiles, rejectedFiles) {
-    console.log(acceptedFiles, rejectedFiles);
-    if (acceptedFiles) {
-      console.log("Je suis LA DROPZONE FUNCTION");
+    if (acceptedFiles[0]) {
       this.handleOpen();
+      agent
+        .post("http://l'urlquetuveuxjeanclaude.com")
+        .use(() => this.setState({ loading: true }))
+        .attach(acceptedFiles[0].name, acceptedFiles[0])
+        .end((err, res) => {
+          if (!err) {
+            this.setState({
+              header: `${acceptedFiles[0].name} book has been uploaded !`,
+              message: "Processing the book ...",
+              color: "green",
+              loading: false
+            });
+          }
+        });
+    } else if (rejectedFiles) {
+      this.handleOpen();
+      this.setState({
+        header: `${rejectedFiles[0].name} book can't be uploaded`,
+        message: `Please verify the validity format of the book, expected pdf got ${
+          rejectedFiles[0].type
+        }`,
+        color: "red"
+      });
     }
   }
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <DropZoned
@@ -67,7 +86,7 @@ export default class FormUpload extends Component {
           accept="application/pdf"
         >
           <Advert>
-            Drop your PDF file right here, we take care of the rest{" "}
+            Drop your book (pdf) file right here, we take care of the rest{" "}
             <span role="img" aria-label="emoji happy">
               😀
             </span>
@@ -87,6 +106,10 @@ export default class FormUpload extends Component {
           open={this.state.openPortal}
           handleOpen={this.handleOpen.bind(this)}
           handleClose={this.handleClose.bind(this)}
+          header={this.state.header}
+          message={this.state.message}
+          color={this.state.color}
+          loading={this.state.loading}
         />
       </div>
     );

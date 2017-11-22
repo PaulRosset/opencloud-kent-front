@@ -16,7 +16,7 @@ export default class Body extends Component {
       <BodyContainer>
         <Advertisement
           unit="leaderboard"
-          test="Oh my PDF 🧐"
+          test="Oh my BOOK 🧐"
           style={{ margin: "20px auto", fontSize: "20px" }}
         />
         <Divider section />
