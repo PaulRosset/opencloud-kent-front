@@ -56,6 +56,7 @@ export default class FormUpload extends Component {
         .attach(acceptedFiles[0].name, acceptedFiles[0])
         .end((err, res) => {
           if (!err) {
+            this.props.res(res.body);
             this.setState({
               header: `${acceptedFiles[0].name} book has been uploaded !`,
               message: "Processing the book ...",
