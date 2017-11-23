@@ -5,7 +5,7 @@ import { Icon } from "semantic-ui-react";
 import Dropzone from "react-dropzone";
 import Portal from "./Advert";
 
-const DropZoned = styled(Dropzone)`
+export const DropZoned = styled(Dropzone)`
   position: relative;
   border: 10px dotted #545454;
   border-radius: 20px;
@@ -79,7 +79,7 @@ export default class FormUpload extends Component {
 
   render() {
     return (
-      <div>
+      <div className="form-container">
         <DropZoned
           onDrop={(acceptedFiles, rejectedFiles) =>
             this.onDrop(acceptedFiles, rejectedFiles)

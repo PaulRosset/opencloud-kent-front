@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test <Form /> Component Check after change some state to <Portal /> Component 1`] = `
+<div
+  className="form-container"
+>
+  <Styled(Dropzone)
+    accept="application/pdf"
+    onDrop={[Function]}
+  >
+    <styled.p>
+      Drop your book (pdf) file right here, we take care of the rest
+       
+      <span
+        aria-label="emoji happy"
+        role="img"
+      >
+        😀
+      </span>
+      <br />
+      <Icon
+        as="i"
+        bordered={true}
+        circular={true}
+        color="grey"
+        link={true}
+        name="upload"
+        size="big"
+        style={
+          Object {
+            "marginTop": "30px",
+          }
+        }
+      />
+    </styled.p>
+  </Styled(Dropzone)>
+  <Portal
+    color="#000"
+    handleClose={[Function]}
+    handleOpen={[Function]}
+    header="Test Header"
+    loading={true}
+    message="Message Test"
+    open={false}
+  />
+</div>
+`;
+
+exports[`Test <Form /> Component Check initial <Form /> Component 1`] = `
+<div
+  className="form-container"
+>
+  <Styled(Dropzone)
+    accept="application/pdf"
+    onDrop={[Function]}
+  >
+    <styled.p>
+      Drop your book (pdf) file right here, we take care of the rest
+       
+      <span
+        aria-label="emoji happy"
+        role="img"
+      >
+        😀
+      </span>
+      <br />
+      <Icon
+        as="i"
+        bordered={true}
+        circular={true}
+        color="grey"
+        link={true}
+        name="upload"
+        size="big"
+        style={
+          Object {
+            "marginTop": "30px",
+          }
+        }
+      />
+    </styled.p>
+  </Styled(Dropzone)>
+  <Portal
+    color={undefined}
+    handleClose={[Function]}
+    handleOpen={[Function]}
+    header={undefined}
+    loading={undefined}
+    message={undefined}
+    open={false}
+  />
+</div>
+`;

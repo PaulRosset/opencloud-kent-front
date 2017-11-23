@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "enzyme": "3.2.0",
+    "enzyme-adapter-react-16": "1.1.0",
     "jest": "21.2.1",
     "material-ui": "0.19.4",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-dropzone": "4.2.3",
+    "react-test-renderer": "16.1.1",
     "redux": "3.7.2",
     "rxjs": "5.5.2",
     "semantic-ui-react": "0.76.0",
@@ -15,7 +18,7 @@
     "superagent": "3.8.1"
   },
   "devDependencies": {
-    "prettier-eslint": "8.2.2",
+    "jest-enzyme": "4.0.1",
     "react-scripts": "1.0.17"
   },
   "scripts": {
